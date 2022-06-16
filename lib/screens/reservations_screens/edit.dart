@@ -90,7 +90,6 @@ class _EditState extends State<EditReservation> {
                 reservation: reservation, visible: widget.visible)));
   }
 
-
   @override
   void initState() {
     //user modifies a text field in TextEditingController, the text field updates value and the controller notifies its listeners
@@ -104,7 +103,7 @@ class _EditState extends State<EditReservation> {
     tarif = widget.tarif!;
     salle = widget.salle!;
     domaine = widget.domaine!;
-    setFirstDate =  widget.visible?? false;
+    setFirstDate = widget.visible ?? false;
     super.initState();
   }
 
@@ -144,8 +143,8 @@ class _EditState extends State<EditReservation> {
               valueDomaine: widget.domaine,
               valueTarif: widget.tarif,
               visible: widget.visible ?? false,
-              firstDateDebut: setFirstDate? DateTime(2022): DateTime.now(),
-              firstDateFin: setFirstDate? DateTime(2022): DateTime.now(),
+              firstDateDebut: setFirstDate ? DateTime(2022) : DateTime.now(),
+              firstDateFin: setFirstDate ? DateTime(2022) : DateTime.now(),
               onToggleEtat: (index) {
                 etatConfirmation = index!;
               },

@@ -64,8 +64,11 @@ class _EditState extends State<EditTarif> {
   void _onConfirm(context) async {
     await editTarif();
     Tarif tarif = await getTarif();
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => DetailsTarif(tarif: tarif, visible: widget.visible)));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                DetailsTarif(tarif: tarif, visible: widget.visible)));
   }
 
   @override
@@ -73,6 +76,8 @@ class _EditState extends State<EditTarif> {
     //user modifies a text field in TextEditingController, the text field updates value and the controller notifies its listeners
     tarifController =
         TextEditingController(text: widget.tarif!.tarif.toString());
+    niveauController =
+        TextEditingController(text: widget.tarif!.niveau.toString());
     super.initState();
   }
 
@@ -107,6 +112,7 @@ class _EditState extends State<EditTarif> {
             child: TarifForm(
               formKey: formKey,
               tarifController: tarifController,
+              niveauController: niveauController,
             ),
           ),
         ),
